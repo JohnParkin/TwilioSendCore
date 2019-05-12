@@ -2,8 +2,6 @@
 using Custom;
 using Twilio;
 using Twilio.Rest.Api.V2010.Account;
-using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Protocols;
 
 public class SMSSend
 {
@@ -23,6 +21,41 @@ public class SMSSend
         );
 
         Console.WriteLine(message.Sid);
+    
+    }
+
+    public static void SMSSendMsgs()
+    {
+        var accountSid = Environment.GetEnvironmentVariable("accountSid");
+        var authToken = Environment.GetEnvironmentVariable("authToken");
+        var from = ConfigurationManager.AppSetting["TwilioNumber"];
+        var JPsiPhone6 = ConfigurationManager.AppSetting["JPsiPhone6"];
+        var spamto = ConfigurationManager.AppSetting["Contacts:John"]; ;
+        string spammessage = "Hello .NET Oxford. Thank you for listening";
+
+        string[] spamees = new string[5];
+        spamees[0] = "John";
+        spamees[1] = "Dan";
+        spamees[2] = "Pym";
+        spamees[3] = "Tim";
+        spamees[4] = "Dushyant";
+
+        TwilioClient.Init(accountSid, authToken);
+
+        foreach (string spamee in spamees)
+        {
+
+            spamto = ConfigurationManager.AppSetting["Contacts:" + spamee];
+            spammessage = ConfigurationManager.AppSetting["Messages:" + spamee];
+
+            var message = MessageResource.Create(
+                body: spammessage,
+                from: from,
+                to: spamto);
+
+            Console.WriteLine(message.Sid);
+
+        }
 
     }
 }

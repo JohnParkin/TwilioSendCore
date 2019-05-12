@@ -15,6 +15,8 @@ namespace Custom
             AppSetting = new ConfigurationBuilder()
                     .SetBasePath(Directory.GetCurrentDirectory())
                     .AddJsonFile("config.json")
+                    .AddJsonFile("NamesNumbers.json")
+                    .AddJsonFile("Messages.json")
                     .Build();
         }
     }

@@ -12,7 +12,9 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "authToken": "8d2f4de7355b69222d5fc01e47b95638",
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "accountSid": "ACf79866324878e7e4cc3fdd5ab07c43fd"
       }
     },
     "TwilioSendCore": {
