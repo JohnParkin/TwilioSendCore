@@ -19,6 +19,16 @@ namespace TwilioSendCore
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+            .ConfigureAppConfiguration(SetupConfiguration)
                 .UseStartup<Startup>();
+
+        private static void SetupConfiguration(WebHostBuilderContext ctx, IConfigurationBuilder builder)
+        {
+            //Removing the defult configuration options
+            builder.Sources.Clear();
+            builder.AddJsonFile("config.json", false, true)
+                .AddJsonFile("NamesNumbers.json")
+                .AddEnvironmentVariables();
+        }
     }
 }

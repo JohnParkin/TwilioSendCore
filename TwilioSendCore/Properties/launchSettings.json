@@ -1,7 +1,7 @@
-﻿{
+{
   "iisSettings": {
-    "windowsAuthentication": false, 
-    "anonymousAuthentication": true, 
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
     "iisExpress": {
       "applicationUrl": "http://localhost:50398",
       "sslPort": 0
@@ -18,10 +18,12 @@
     "TwilioSendCore": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:5000",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+        "authToken": "8d2f4de7355b69222d5fc01e47b95638",
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "accountSid": "ACf79866324878e7e4cc3fdd5ab07c43fd"
+      },
+      "applicationUrl": "http://localhost:8888"
     }
   }
 }
