@@ -30,7 +30,7 @@ public class SMSSend
         var authToken = Environment.GetEnvironmentVariable("authToken");
         var from = ConfigurationManager.AppSetting["TwilioNumber"];
         var JPsiPhone6 = ConfigurationManager.AppSetting["JPsiPhone6"];
-        var spamto = ConfigurationManager.AppSetting["Contacts:John"]; ;
+        var spamto = ConfigurationManager.AppSetting["Contacts:John"];
         string spammessage = "Hello .NET Oxford. Thank you for listening";
 
         string[] spamees = new string[5];
